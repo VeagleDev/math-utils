@@ -25,6 +25,13 @@ Here is an exhaustive list of purposed tools :
 - Cosinus
 - Tangent
 
+### Formulas
+- Speed
+- Power
+- Resistance
+
+You can suggest more tools by making Issues.
+
 <hr />
 
 ## Contributing
