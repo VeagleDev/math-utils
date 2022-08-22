@@ -8,8 +8,7 @@ int main()
     
     cout << "Quel type de calcul voulez-vous effectuer ?\noperation(op) | arithetique(ar)\ntheoreme(th)  | fonction(f)\nformule(fo)";
 
-    int rep,op,ar,th,f,fo;
+    int rep ; op ; ar ; th ; f ; fo;
 
-    
     
 }
