@@ -47,7 +47,7 @@ int main(int argc, char **argv) {
         cerr << "La rubrique choisie n'existe pas !\nVeuillez reessayer : \n\n";
         return main(argc, argv);
     }
-    cout << "Vous avez choisi la rubrique n." << it->first << ", qui sert pour '" << it->second << "'\n";
+    cout << " --> " << it->second << "\n";
 
     options["0"] = "Retour aux rubriques";
     numRubrique = stoi(it->first);
@@ -64,7 +64,7 @@ int main(int argc, char **argv) {
             options["2"] = "Est premier ?";
             options["3"] = "Chercheur de nombres premiers";
             options["4"] = "Chercheur de diviseurs communs";
-            options["5"] = "Réducteur de fractions";
+            options["5"] = "Reducteur de fractions";
             break;
         case 3:
             options["1"] = "Pythagore";
@@ -96,7 +96,7 @@ int main(int argc, char **argv) {
             break;
     }
     demandeOption:
-    cout << "Veuillez choisir une option parmis les suivantes : \n";
+    cout << "\n\n\nVeuillez choisir une option parmis les suivantes : \n";
     for(map<string, string>::iterator it = options.begin() ; it != options.end() ; ++it)
     {
         string out;
@@ -107,6 +107,7 @@ int main(int argc, char **argv) {
         out += "\n";
         cout << out;
     }
+    cout << "Operation n.";
     rep.clear();
     getline(cin, rep);
     if(rep.size() > 2 || rep.empty())
@@ -124,50 +125,51 @@ int main(int argc, char **argv) {
     {
         return main(argc, argv);
     }
-    cout << "Vous avez choisi le choix n." << it->first << " qui sert a '" << it->second << "'\n";
+    cout << " --> " << it->second << "\n";
     numChoix = stoi(it->first);
     action = numRubrique*10 + numChoix;
+
     actions:
 
     cout << "L'action a effectuer est la n." << action;
 
     switch(action)
     {
-        case 11:
+        case 11: // Adder
             break;
-        case 12:
+        case 12: // Substracter
             break;
-        case 13:
+        case 13: // Multiplicator
             break;
-        case 14:
+        case 14: // Divisor
             break;
-        case 21:
+        case 21: // Divisor finder
             break;
-        case 22:
+        case 22: // Is primary
             break;
-        case 23:
+        case 23: // Primary numbers finder
             break;
-        case 24:
+        case 24: // Common divisors
             break;
-        case 25:
+        case 25: // Fraction reduction
             break;
-        case 31:
+        case 31: // Pythagore
             break;
-        case 32:
+        case 32: // Thales
             break;
-        case 33:
+        case 33: // Similar triangles
             break;
-        case 41:
+        case 41: // Sinus
             break;
-        case 42:
+        case 42: // Cosinus
             break;
-        case 43:
+        case 43: // Tangent
             break;
-        case 51:
+        case 51: // Speed
             break;
-        case 52:
+        case 52: // Power
             break;
-        case 53:
+        case 53: // Resistance
             break;
         default:
             cerr << "L'action est invalide !!";
