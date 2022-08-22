@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
     rubriques["4"] = "Fonctions";
     rubriques["5"] = "Formules";
 
-    cout << "Bienvenue sur math-utils,\nVeuillez choisir une rubrique parmi celles ci : \n";
+    cout << "Bienvenue sur math-utils,\n\nVeuillez choisir une rubrique parmi celles ci : \n\n";
 
 
     // Pour chaque paires de numéro-nom
@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
         out += "\n";
         cout << out;
     }
-    cout << "Rubrique n.";
+    cout << "\nRubrique n.";
     string rep;
     getline(cin, rep); // On récupère son numérp de manière sécurisée
 
@@ -116,7 +116,7 @@ int main(int argc, char **argv) {
             break;
     }
     demandeOption:
-    cout << "\n\n\nVeuillez choisir une option parmis les suivantes : \n";
+    cout << "\n\nVeuillez choisir une option parmis les suivantes : \n";
     // On affiche les rubriques pareil mais cette fois pour les options
     for(map<string, string>::iterator it = options.begin() ; it != options.end() ; ++it)
     {
@@ -129,7 +129,7 @@ int main(int argc, char **argv) {
         cout << out;
     }
     // Renvoie "Hourra" sur Discord si tu lis vraiment les commentaires
-    cout << "Operation n.";
+    cout << "\nOperation n.";
     rep.clear();
     getline(cin, rep); // On récupère sa réponse
 
@@ -155,7 +155,7 @@ int main(int argc, char **argv) {
 
     actions:
 
-    cout << "L'action a effectuer est la n." << action;
+    cout << "\nL'action a effectuer est la n." << action << "\n\n";
 
     switch(action) // En fonction du numéro d'action, on fait une fonction en partiulier.
     {
