@@ -4,32 +4,32 @@
 #include <string>
 
 using namespace std;
-int main(int argc, char **argv) 
+
+bool checkArguments(int argc, char **argv, int * action)
 {
-
-
-    // On créé les variables importantes dès le début
-    int action;
-    int numChoix;
-    int numRubrique;
-
-
-
-
     if(argc == 2)
     {
         string arg = argv[1];
         if(arg.size() == 2 && isdigit(arg[0]) && isdigit(arg[1]))
         {
-            action = stoi(arg);
+            *action = stoi(arg);
+            return true;
         }
     }
+    return false;
+}
 
-
+int getActionNumber()
+{
+    // On créé les variables importantes dès le début
+    int numChoix;
+    int numRubrique;
+    string rep;
 
     // On créé des dictionnaires qui associent le numéro de la rubrique/option avec leur description
     map<string, string> rubriques;
     map<string, string> options;
+
 
     // On associe pour chaque rubrique
     rubriques["1"] = "Operations";
@@ -53,14 +53,13 @@ int main(int argc, char **argv)
         cout << out;
     }
     cout << "\nRubrique n.";
-    string rep;
     getline(cin, rep); // On récupère son numérp de manière sécurisée
 
     // Si c'est vide/trop grand, on annule
     if(rep.size() > 2 || rep.empty())
     {
         cerr << "La rubrique choisie n'existe pas !\nVeuillez reessayer : \n\n";
-        return main(argc, argv);
+        return getActionNumber();
     }
 
     // On cherche dans le dictionnaire, la paire qui correspond au numéro qu'il a entré
@@ -71,11 +70,10 @@ int main(int argc, char **argv)
     {
         if(rep.size() == 2) // Si il a tapé le numéro d'action, on va direct à la fin
         {
-            action = stoi(rep);
-            goto actions;
+            return stoi(rep);
         }
         cerr << "La rubrique choisie n'existe pas !\nVeuillez reessayer : \n\n"; // Sinon on le renvoie au début
-        return main(argc, argv);
+        return getActionNumber();
     }
     cout << " --> " << it->second << "\n"; // On affiche ce qu'il a choisi
 
@@ -118,14 +116,13 @@ int main(int argc, char **argv)
         default:
             if(numRubrique <= 10)
             {
-                action = numRubrique;
-                goto actions;
+                return numRubrique;
                 break;
             }
             else
             {
                 cerr << "La rubrique choisie n'existe pas !\nVeuillez reessayer : \n\n";
-                return main(argc, argv);
+                return getActionNumber();
             }
             break;
     }
@@ -161,16 +158,16 @@ int main(int argc, char **argv)
     }
     if(it->first == "0") // Si il a mis 0 (retour) on le remet au début
     {
-        return main(argc, argv);
+        return getActionNumber();
     }
     cout << " --> " << it->second << "\n";
     numChoix = stoi(it->first);
-    action = numRubrique*10 + numChoix; // On calcule le numéro d'action en mettant rubrique et choix ( on fait *10 pour passer en dizaine )
+    return numRubrique*10 + numChoix; // On calcule le numéro d'action en mettant rubrique et choix ( on fait *10 pour passer en dizaine )
+}
 
-    actions:
-
-    cout << "\nL'action a effectuer est la n." << action << "\n\n";
-
+void executeAction(int action)
+{
+    cout << "L'action a effectuer est la n." << action;
     switch(action) // En fonction du numéro d'action, on fait une fonction en partiulier.
     {
         case 11: // Adder
@@ -213,5 +210,20 @@ int main(int argc, char **argv)
             cerr << "L'action est invalide !!";
             break;
     }
+}
+
+void menu(int argc, char **argv)
+{
+    int action;
+    if(!checkArguments(argc, argv, &action))
+    {
+        action = getActionNumber();
+    }
+    executeAction(action);
+}
+
+int main(int argc, char **argv) 
+{
+    menu(argc, argv);
     return 0;
 }
