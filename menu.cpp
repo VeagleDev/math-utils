@@ -4,12 +4,26 @@
 #include <string>
 
 using namespace std;
-int main(int argc, char **argv) {
+int main(int argc, char **argv) 
+{
+
 
     // On créé les variables importantes dès le début
     int action;
     int numChoix;
     int numRubrique;
+
+
+
+
+    if(argc == 2)
+    {
+        string arg = argv[1];
+        if(arg.size() == 2 && isdigit(arg))
+        {
+            action = stoi(arg); 
+        }          
+    }
 
 
 
