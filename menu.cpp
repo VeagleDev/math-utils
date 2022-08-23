@@ -19,10 +19,10 @@ int main(int argc, char **argv)
     if(argc == 2)
     {
         string arg = argv[1];
-        if(arg.size() == 2 && isdigit(arg))
+        if(arg.size() == 2 && isdigit(arg[0]) && isdigit(arg[1]))
         {
-            action = stoi(arg); 
-        }          
+            action = stoi(arg);
+        }
     }
 
 
