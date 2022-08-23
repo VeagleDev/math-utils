@@ -167,7 +167,7 @@ int getActionNumber()
 
 void executeAction(int action)
 {
-    cout << "L'action a effectuer est la n." << action;
+    cout << "\n\nL'action a effectuer est la n." << action << "\n";
     switch(action) // En fonction du numéro d'action, on fait une fonction en partiulier.
     {
         case 11: // Adder
@@ -207,7 +207,7 @@ void executeAction(int action)
         case 53: // Resistance
             break;
         default:
-            cerr << "L'action est invalide !!";
+            cerr << "[ERREUR] : L'action est invalide !!\n\n";
             break;
     }
 }
