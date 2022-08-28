@@ -71,9 +71,9 @@ cout<<"Entrez le nombre : ";
 cin>>nb;
 cout << endl << "Les diviseurs de " << nb << " sont ";
  
-for(rep=1;rep<=nb;++rep)
+for(rep=1;rep<=sqrt(nb);++rep)
 {
-if(n%i==0)
+if(nb%i==0)
 cout << " ; " << rep;
 }
 }
