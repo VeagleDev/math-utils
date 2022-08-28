@@ -73,7 +73,7 @@ cout << endl << "Les diviseurs de " << nb << " sont ";
  
 for(rep=1;rep<=sqrt(nb);++rep)
 {
-if(nb%i==0)
+if(nb%rep==0)
 cout << " ; " << rep;
 }
 }
