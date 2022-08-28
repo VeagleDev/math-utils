@@ -2,6 +2,8 @@
 #include <cmath>
 using namespace std;
 
+//Operation
+
 void addition()
 {
     float nb1;
@@ -60,8 +62,21 @@ void division()
 
 
 
+//Arithmetique
 
-
+void diviseurs()
+{
+int nb,rep;
+cout<<"Entrez le nombre : ";
+cin>>nb;
+cout << endl << "Les diviseurs de " << nb << " sont ";
+ 
+for(rep=1;rep<=nb;++rep)
+{
+if(n%i==0)
+cout << " ; " << rep;
+}
+}
 
 
 
