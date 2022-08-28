@@ -83,5 +83,6 @@ cout << " ; " << rep;
 
 int main()
 {
+diviseurs()
 return 0;
 }
