@@ -66,16 +66,17 @@ void division()
 
 void diviseurs()
 {
-int nb,rep;
-cout<<"Entrez le nombre : ";
-cin>>nb;
-cout << endl << "Les diviseurs de " << nb << " sont ";
- 
-for(rep=1;rep<=sqrt(nb);++rep)
-{
-if(nb%rep==0)
-cout << " ; " << rep;
-}
+
+    int nb,rep;
+    cout<<"Entrez le nombre : ";
+    cin>>nb;
+    cout << endl << "Les diviseurs de " << nb << " sont ";
+
+    for( rep = 1; rep <= nb; ++rep)
+    {
+        if(nb%rep==0)
+            cout << rep << ";";
+    }
 }
 
 
@@ -83,6 +84,6 @@ cout << " ; " << rep;
 
 int main()
 {
-diviseurs()
+diviseurs();
 return 0;
 }
