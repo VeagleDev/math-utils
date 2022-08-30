@@ -115,11 +115,28 @@ void isPrimary()
 
 }
 
+void findPrimary()
+{
+    int cb;
+    cout << "Combien de nombres premiers voulez-vous calculer : ";
+    cin >> cb;
+    int compteur = 0;
+    cout << "\nVoici une liste de nombres premiers : \n";
+    while (compteur < cb)
+    {
+        if(diviseurs(&compteur).size() == 2)
+        {
+            cout << compteur << " ";
+        }
+        compteur++;
+    }
+}
+
 
 
 
 int main()
 {
-isPrimary();
+findPrimary();
 return 0;
 }
