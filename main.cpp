@@ -500,6 +500,7 @@ void menu(int argc, char **argv)
         action = getActionNumber();
     }
     executeAction(action);
+    cout << endl;
 }
 
 int main(int argc, char **argv)
