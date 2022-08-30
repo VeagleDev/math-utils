@@ -120,6 +120,17 @@ void findPrimary()
     int cb;
     cout << "Jusqu'a combien voulez-vous trouver des nombres premiers : ";
     cin >> cb;
+    if(cb > 5000)
+    {
+        string in;
+        cout << "Etes-vous surs de calculer autant de nombres (va prendre beaucoup de place) ( O / n ) : ";
+        cin >> in;
+        if(in != "O" and in != "o")
+        {
+            cout << endl << "Annulation";
+            return;
+        }
+    }
     int compteur = 0;
     cout << "\nVoici une liste de nombres premiers : \n";
     while (compteur < cb)
