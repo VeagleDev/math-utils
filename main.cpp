@@ -149,10 +149,9 @@ tab commonDivisors(int * nombre1 = nullptr, int * nombre2 = nullptr)
     if(nombre1 != nullptr && nombre2 != nullptr)
     {
         tab div1 = diviseurs(nombre1);
-        tab div2 = diviseurs(nombre1);
+        tab div2 = diviseurs(nombre2);
 
         tab commonDiv;
-
         for(int i : div1)
         {
             for(int j : div2)
@@ -212,7 +211,7 @@ string slice(string chaine, int beg, int end)
     string sliced;
     if(beg > end || beg > chaine.size() || end > chaine.size())
     {
-        return "0";
+        return "-1";
     }
     for(int i = beg; i < end; i++)
     {
@@ -259,7 +258,7 @@ void reduceFraction()
     int ppNumerateur = numerateur / pgcd;
     int ppDenominateur = denominateur /pgcd;
     // renvoyer la fraction
-    cout << "La fraction réduite de " << numerateur << "/" << denominateur << " est " << ppNumerateur << "/" << ppDenominateur;
+    cout << "La fraction reduite de " << numerateur << "/" << denominateur << " est " << ppNumerateur << "/" << ppDenominateur;
     return;
 }
 
