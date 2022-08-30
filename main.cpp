@@ -143,11 +143,50 @@ void findPrimary()
     }
 }
 
+void commonDivisors()
+{
+    // demander deux int
+    int nb1 , nb2;
+    cout << "Entrez le premier nombre\n";
+    cin >> nb1;
+    cout << "Entrez le deuxième nombre\n";
+    cin >> nb2;
+
+    tab div1 = diviseurs(&nb1);
+    tab div2 = diviseurs(&nb2);
+
+    tab commonDiv;
+
+    for(int i : div1)
+    {
+        for(int j : div2)
+        {
+            if(i == j)
+            {
+                commonDiv.push_back(i);
+            }
+        }
+    }
+    if(commonDiv.size() == 1)
+    {
+        cout << nb1 << " et " << nb2 << " sont des nombres premiers mutuels";
+    }
+    else
+    {
+        cout << "Les diviseurs communs de " << nb1 << " et " << nb2 << " sont : ";
+        for(int k : commonDiv)
+        {
+            cout << k << " ; ";
+        }
+    }
+
+}
+
 
 
 
 int main()
 {
-findPrimary();
+commonDivisors();
 return 0;
 }
