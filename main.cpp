@@ -203,6 +203,7 @@ tab commonDivisors(int * nombre1 = nullptr, int * nombre2 = nullptr)
                 cout << k << " ; ";
             }
         }
+        return commonDiv;
     }
 
 
@@ -459,22 +460,31 @@ void executeAction(int action)
             reduceFraction();
             break;
         case 31: // Pythagore
+            cerr << "[ERREUR] : Fonction pas encore assignee !!\n\n";
             break;
         case 32: // Thales
+            cerr << "[ERREUR] : Fonction pas encore assignee !!\n\n";
             break;
         case 33: // Similar triangles
+            cerr << "[ERREUR] : Fonction pas encore assignee !!\n\n";
             break;
         case 41: // Sinus
+            cerr << "[ERREUR] : Fonction pas encore assignee !!\n\n";
             break;
         case 42: // Cosinus
+            cerr << "[ERREUR] : Fonction pas encore assignee !!\n\n";
             break;
         case 43: // Tangent
+            cerr << "[ERREUR] : Fonction pas encore assignee !!\n\n";
             break;
         case 51: // Speed
+            cerr << "[ERREUR] : Fonction pas encore assignee !!\n\n";
             break;
         case 52: // Power
+            cerr << "[ERREUR] : Fonction pas encore assignee !!\n\n";
             break;
         case 53: // Resistance
+            cerr << "[ERREUR] : Fonction pas encore assignee !!\n\n";
             break;
         default:
             cerr << "[ERREUR] : L'action est invalide !!\n\n";
@@ -490,4 +500,9 @@ void menu(int argc, char **argv)
         action = getActionNumber();
     }
     executeAction(action);
+}
+
+int main(int argc, char **argv)
+{
+    menu(argc, argv);
 }
