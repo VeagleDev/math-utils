@@ -118,7 +118,7 @@ void isPrimary()
 void findPrimary()
 {
     int cb;
-    cout << "Combien de nombres premiers voulez-vous calculer : ";
+    cout << "Jusqu'a combien voulez-vous trouver des nombres premiers : ";
     cin >> cb;
     int compteur = 0;
     cout << "\nVoici une liste de nombres premiers : \n";
