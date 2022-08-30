@@ -1,8 +1,11 @@
 #include <iostream>
 #include <cmath>
+#include <vector>
 using namespace std;
 
 //Operation
+
+typedef vector<int> tab;
 
 void addition()
 {
@@ -49,7 +52,6 @@ void multiplication()
 
 void division()
 {
-
     float nb1;
     float nb2;
     cout << "Entrez le premier nombre : ";
@@ -64,19 +66,53 @@ void division()
 
 //Arithmetique
 
-void diviseurs()
+tab diviseurs(int * nombre = nullptr)
 {
-
+    tab diviseurs;
     int nb,rep;
-    cout<<"Entrez le nombre : ";
-    cin>>nb;
-    cout << endl << "Les diviseurs de " << nb << " sont ";
 
-    for( rep = 1; rep <= nb; ++rep)
+    if(nombre == nullptr)
     {
-        if(nb%rep==0)
-            cout << rep << ";";
+        cout<<"Entrez le nombre : ";
+        cin>>nb;
+        cout << endl << "Les diviseurs de " << nb << " sont ";
+
+        for( rep = 1; rep <= nb; ++rep)
+        {
+            if(nb%rep==0)
+            {
+                cout << rep << ";";
+                diviseurs.push_back(rep);
+            }
+
+        }
     }
+    else
+    {
+        nb = *nombre;
+        for( rep = 1; rep <= nb; ++rep)
+            if(nb%rep==0)
+                diviseurs.push_back(rep);
+    }
+    return diviseurs;
+}
+
+void isPrimary()
+{
+    int nombre;
+    cout << "Ce nombre est il un nombre premier : ";
+    cin >> nombre;
+    const tab div = diviseurs(&nombre);
+    if(div.empty() or div.size() != 2)
+    {
+        cout << endl << nombre << " n'est pas premier";
+    }
+    else
+    {
+        cout << endl << nombre << " est premier";
+    }
+
+
 }
 
 
@@ -84,6 +120,6 @@ void diviseurs()
 
 int main()
 {
-diviseurs();
+isPrimary();
 return 0;
 }
